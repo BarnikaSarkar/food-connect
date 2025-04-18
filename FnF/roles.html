@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Role Selection - Food n Feed</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ededa9;
+      text-align: center;
+    }
+    header {
+      background-color: #7fbcf9;
+      color: white;
+      padding: 1rem;
+    }
+    h1 {
+      margin: 1rem 0;
+      color: #851c75;
+    }
+    .roles-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .role-card {
+      background-color: white;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      width: 200px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .role-card:hover {
+      transform: scale(1.05);
+    }
+    .role-card h2 {
+      font-size: 1.5rem;
+      color: #007bff;
+    }
+    .role-card p {
+      color: #6c757d;
+    }
+    .btn {
+      display: block;
+      margin-top: 1rem;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      background-color: #c726ec;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Select Your Role</h1>
+  </header>
+
+  <div class="roles-container">
+    <!-- Hotel Manager Card -->
+    <div class="role-card">
+      <h2>Hotel Manager</h2>
+      <p>Register your hotel and report leftover food to help communities.</p>
+      <a href="hotel-form.html" class="btn">Choose</a>
+    </div>
+
+    <!-- Community Member Card -->
+    <div class="role-card">
+      <h2>Community Member</h2>
+      <p>Find leftover food near your location for your community.</p>
+      <a href="community-form.html" class="btn">Choose</a>
+    </div>
+  </div>
+</body>
+</html>

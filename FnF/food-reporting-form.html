@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Reporting Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Food Reporting Form</h1>
+        <form id="foodReportingForm">
+            <label for="hotelName">Hotel Name:</label>
+            <input type="text" id="hotelName" name="hotelName" placeholder="Enter hotel name" required>
+
+            <label for="foodType">Type of Food:</label>
+            <select id="foodType" name="foodType" required>
+                <option value="">-- Select Food Type --</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+                <option value="Mixed">Mixed</option>
+            </select>
+
+            <label for="foodAmount">Amount of Food (in kilos):</label>
+            <input type="number" id="foodAmount" name="foodAmount" placeholder="Enter food amount" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+            <label for="contact">Contact Information:</label>
+            <input type="text" id="contact" name="contact" placeholder="Enter phone or email" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('foodReportingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                hotelName: document.getElementById('hotelName').value,
+                foodType: document.getElementById('foodType').value,
+                foodAmount: document.getElementById('foodAmount').value,
+                location: document.getElementById('location').value,
+                contact: document.getElementById('contact').value,
+            };
+
+            console.log('Form Submitted:', formData);
+
+            // Placeholder for API call or data handling logic
+            alert('Food reporting details submitted successfully!');
+            document.getElementById('foodReportingForm').reset();
+        });
+    </script>
+</body>
+</html>

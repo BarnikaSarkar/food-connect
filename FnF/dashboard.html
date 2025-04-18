@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .card div {
+            flex: 1;
+        }
+        .card button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <h1>Available Food Reports</h1>
+
+        <div class="card">
+            <div>
+                <strong>Hotel Name:</strong> Gourmet Delight<br>
+                <strong>Food Type:</strong> Vegetarian<br>
+                <strong>Amount:</strong> 10 kg<br>
+                <strong>Location:</strong> Downtown Street<br>
+                <strong>Contact:</strong> +1234567890
+            </div>
+            <button>Request</button>
+        </div>
+
+        <div class="card">
+            <div>
+                <strong>Hotel Name:</strong> Urban Bites<br>
+                <strong>Food Type:</strong> Mixed<br>
+                <strong>Amount:</strong> 15 kg<br>
+                <strong>Location:</strong> Green Valley<br>
+                <strong>Contact:</strong> +0987654321
+            </div>
+            <button>Request</button>
+        </div>
+
+        <!-- More cards can be added dynamically -->
+    </div>
+
+    <script>
+        // Example functionality for the "Request" button
+        const buttons = document.querySelectorAll('.card button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Your request has been sent to the hotel!');
+            });
+        });
+    </script>
+</body>
+</html>

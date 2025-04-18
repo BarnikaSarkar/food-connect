@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Home Page</title>
+    <style>
+        /* General styles for body and transitions */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Navigation bar styles */
+        nav {
+            background: #4CAF50;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            position: relative;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffcc00;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Button styles */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card fade-in effect */
+        .card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+            margin: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loader styles */
+        #loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #4CAF50;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">FoodConnect</div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <section id="features">
+        <h1>Welcome to FoodConnect</h1>
+        <button>Learn More</button>
+        <div class="card">Feature 1: Connect Communities</div>
+        <div class="card">Feature 2: Report Leftover Food</div>
+        <div class="card">Feature 3: Locate Help</div>
+    </section>
+
+    <script>
+        // Card animation logic
+        const cards = document.querySelectorAll('.card');
+
+        window.addEventListener('scroll', () => {
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < window.innerHeight - 100) {
+                    card.classList.add('show');
+                }
+            });
+        });
+
+        // Remove loader after page load
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

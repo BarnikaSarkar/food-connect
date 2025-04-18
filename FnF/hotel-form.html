@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Reporting - Hotel Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ddf385;
+    }
+    header {
+      background-color: #606e7c;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      color: #e9aee3;
+      margin-top: 1rem;
+    }
+    form {
+      max-width: 500px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    form div {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #495057;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Report Leftover Food</h1>
+  </header>
+
+  <form action="#" method="POST">
+    <div>
+      <label for="hotel-name">Hotel Name</label>
+      <input type="text" id="hotel-name" name="hotel_name" placeholder="Enter hotel name" required>
+    </div>
+
+    <div>
+      <label for="food-type">Type of Food</label>
+      <select id="food-type" name="food_type" required>
+        <option value="" disabled selected>Select food type</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="non-vegetarian">Non-Vegetarian</option>
+        <option value="snacks">Snacks</option>
+        <option value="desserts">Desserts</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="food-quantity">Amount of Food (in kilos)</label>
+      <input type="number" id="food-quantity" name="food_quantity" placeholder="Enter quantity in kilos" required>
+    </div>
+
+    <div>
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" placeholder="Enter location" required>
+    </div>
+
+    <div>
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" placeholder="Enter contact number" required>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
